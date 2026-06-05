@@ -1,0 +1,36 @@
+============================================================
+DRAFT: CASE FACT SUMMARY
+Document: internal_memo.txt
+Model: llama-3.3-70b-versatile
+============================================================
+
+## Document Overview
+The document is a Court Notice with a target contract execution date of April 15, 2024 [2d7d5fb335ce].
+  [Evidence: 2d7d5fb335ce]
+
+## Parties Involved
+The parties involved include Rajesh Mehta, Ananya Sharma, M/s TechBuild Constructions Pvt. Ltd., and Mr. [857306549920, 7f2958eec97d].
+  [Evidence: 857306549920, 7f2958eec97d]
+
+## Key Dates & Deadlines
+Key dates include April 1, 2024, March 31, 2025, and April 15, 2024 [857306549920, 2d7d5fb335ce].
+  [Evidence: 857306549920, 2d7d5fb335ce]
+
+## Financial Terms
+The monthly rent is Rs. 22,000/- and the security deposit is Rs. 66,000/- [63ec09f6bf62, ebc26f7dd819].
+  [Evidence: 63ec09f6bf62, ebc26f7dd819]
+
+## Key Obligations & Clauses
+The tenant shall pay rent by the 5th of each month and the landlord is responsible for major structural repairs [86900ccabd38, f868eb2922e4].
+  [Evidence: 86900ccabd38, f868eb2922e4]
+
+## Flags & Risk Items
+Flags include [FLAG - UNFAVORABLE], [FLAG - REVIEWNEEDED], and liability cap at 3 months contract value [9e24d5f353a3].
+  [Evidence: 9e24d5f353a3]
+
+## Recommended Actions
+Recommended actions include negotiating Clause 4.2, Clause 8.1, and obtaining legal sign-off before execution [c5dcd7449c50, 2d7d5fb335ce].
+  [Evidence: c5dcd7449c50, 2d7d5fb335ce]
+
+============================================================
+Evidence blocks used: 14

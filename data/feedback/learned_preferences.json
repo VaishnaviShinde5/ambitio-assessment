@@ -1,0 +1,170 @@
+[
+  {
+    "rule": "Always express security deposit as multiple of rent.",
+    "source_edit_id": "test123",
+    "document_type": "Lease Agreement",
+    "occurrences": 2,
+    "last_seen": "2026-06-05T18:14:23.418100"
+  },
+  {
+    "rule": "Always prioritize recommended actions in court notices by clearly labeling them as such",
+    "source_edit_id": "34246dfc93",
+    "document_type": "Court Notice",
+    "occurrences": 2,
+    "last_seen": "2026-06-05T18:14:10.830428"
+  },
+  {
+    "rule": "Use a standard format for noting operator review and date",
+    "source_edit_id": "34246dfc93",
+    "document_type": "Court Notice",
+    "occurrences": 2,
+    "last_seen": "2026-06-05T18:14:10.830428"
+  },
+  {
+    "rule": "Clearly indicate any changes or updates to hearing schedules",
+    "source_edit_id": "34246dfc93",
+    "document_type": "Court Notice",
+    "occurrences": 2,
+    "last_seen": "2026-06-05T18:14:10.830428"
+  },
+  {
+    "rule": "Maintain a record of evidence blocks used in each document version",
+    "source_edit_id": "34246dfc93",
+    "document_type": "Court Notice",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:14:06.204786"
+  },
+  {
+    "rule": "Maintain a consistent format for referencing evidence blocks throughout the document.",
+    "source_edit_id": "d33ca0c21c",
+    "document_type": "Court Notice",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:14:10.830428"
+  },
+  {
+    "rule": "Clearly state late payment penalty with the specific day of the month it applies from.",
+    "source_edit_id": "7f0a0808d2",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:14:23.418100"
+  },
+  {
+    "rule": "Use a standardized format for currency amounts, including Rs. X/- for Indian rupees.",
+    "source_edit_id": "7f0a0808d2",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:14:23.418100"
+  },
+  {
+    "rule": "Prioritize recommended actions for clarity and readability.",
+    "source_edit_id": "7f0a0808d2",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:14:23.418100"
+  },
+  {
+    "rule": "Include operator notes to provide additional context and explanations.",
+    "source_edit_id": "7f0a0808d2",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:14:23.418100"
+  },
+  {
+    "rule": "Always include a reviewed timestamp at the top of the document",
+    "source_edit_id": "801f84d52e",
+    "document_type": "Lease Agreement",
+    "occurrences": 4,
+    "last_seen": "2026-06-05T18:18:34.207747"
+  },
+  {
+    "rule": "Clearly label sections that have been prioritized or modified by the operator",
+    "source_edit_id": "801f84d52e",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:15:53.377099"
+  },
+  {
+    "rule": "Specify security deposit amounts in relation to rent",
+    "source_edit_id": "801f84d52e",
+    "document_type": "Lease Agreement",
+    "occurrences": 4,
+    "last_seen": "2026-06-05T18:18:34.207747"
+  },
+  {
+    "rule": "Explicitly state late payment penalties in the document",
+    "source_edit_id": "801f84d52e",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:15:53.377099"
+  },
+  {
+    "rule": "Use a standard format for currency amounts and units of time",
+    "source_edit_id": "801f84d52e",
+    "document_type": "Lease Agreement",
+    "occurrences": 2,
+    "last_seen": "2026-06-05T18:18:34.207747"
+  },
+  {
+    "rule": "Clearly label added sections with 'OPERATOR:' notation to track changes.",
+    "source_edit_id": "1a7ec24e00",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:15:54.717881"
+  },
+  {
+    "rule": "Define late payment penalty with explicit timing and amount.",
+    "source_edit_id": "1a7ec24e00",
+    "document_type": "Lease Agreement",
+    "occurrences": 3,
+    "last_seen": "2026-06-05T18:18:34.207747"
+  },
+  {
+    "rule": "Use Rs. X/- format for all Indian currency amounts.",
+    "source_edit_id": "1a7ec24e00",
+    "document_type": "Lease Agreement",
+    "occurrences": 2,
+    "last_seen": "2026-06-05T18:18:32.875112"
+  },
+  {
+    "rule": "Add a clause summary section to the document.",
+    "source_edit_id": "1a7ec24e00",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:15:54.717881"
+  },
+  {
+    "rule": "Prioritize recommended actions for clarity.",
+    "source_edit_id": "1a7ec24e00",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:15:54.717881"
+  },
+  {
+    "rule": "Clearly label prioritized sections with 'Prioritized' notation",
+    "source_edit_id": "4bbedb0c4d",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:18:32.875112"
+  },
+  {
+    "rule": "Include operator notes for important financial terms not covered in original draft",
+    "source_edit_id": "4bbedb0c4d",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:18:32.875112"
+  },
+  {
+    "rule": "Clearly label and prioritize recommended actions",
+    "source_edit_id": "1f113592b7",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:18:34.207747"
+  },
+  {
+    "rule": "Include a clause summary for easy reference",
+    "source_edit_id": "1f113592b7",
+    "document_type": "Lease Agreement",
+    "occurrences": 1,
+    "last_seen": "2026-06-05T18:18:34.207747"
+  }
+]

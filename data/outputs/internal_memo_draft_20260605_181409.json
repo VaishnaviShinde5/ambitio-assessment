@@ -1,0 +1,141 @@
+{
+  "document_name": "internal_memo.txt",
+  "draft_type": "Case Fact Summary",
+  "sections": [
+    {
+      "heading": "Document Overview",
+      "content": "The document is a Court Notice with a target contract execution date of April 15, 2024 [2d7d5fb335ce].",
+      "supporting_chunk_ids": [
+        "2d7d5fb335ce"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Parties Involved",
+      "content": "The parties involved include Rajesh Mehta, Ananya Sharma, M/s TechBuild Constructions Pvt. Ltd., and Mr. [857306549920, 7f2958eec97d].",
+      "supporting_chunk_ids": [
+        "857306549920",
+        "7f2958eec97d"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Key Dates & Deadlines",
+      "content": "Key dates include April 1, 2024, March 31, 2025, and April 15, 2024 [857306549920, 2d7d5fb335ce].",
+      "supporting_chunk_ids": [
+        "857306549920",
+        "2d7d5fb335ce"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Financial Terms",
+      "content": "The monthly rent is Rs. 22,000/- and the security deposit is Rs. 66,000/- [63ec09f6bf62, ebc26f7dd819].",
+      "supporting_chunk_ids": [
+        "63ec09f6bf62",
+        "ebc26f7dd819"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Key Obligations & Clauses",
+      "content": "The tenant shall pay rent by the 5th of each month and the landlord is responsible for major structural repairs [86900ccabd38, f868eb2922e4].",
+      "supporting_chunk_ids": [
+        "86900ccabd38",
+        "f868eb2922e4"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Flags & Risk Items",
+      "content": "Flags include [FLAG - UNFAVORABLE], [FLAG - REVIEWNEEDED], and liability cap at 3 months contract value [9e24d5f353a3].",
+      "supporting_chunk_ids": [
+        "9e24d5f353a3"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Recommended Actions",
+      "content": "Recommended actions include negotiating Clause 4.2, Clause 8.1, and obtaining legal sign-off before execution [c5dcd7449c50, 2d7d5fb335ce].",
+      "supporting_chunk_ids": [
+        "c5dcd7449c50",
+        "2d7d5fb335ce"
+      ],
+      "confidence": "supported"
+    }
+  ],
+  "raw_llm_output": "{\n  \"sections\": [\n    {\n      \"heading\": \"Document Overview\",\n      \"content\": \"The document is a Court Notice with a target contract execution date of April 15, 2024 [2d7d5fb335ce].\",\n      \"supporting_chunk_ids\": [\"2d7d5fb335ce\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Parties Involved\",\n      \"content\": \"The parties involved include Rajesh Mehta, Ananya Sharma, M/s TechBuild Constructions Pvt. Ltd., and Mr. [857306549920, 7f2958eec97d].\",\n      \"supporting_chunk_ids\": [\"857306549920\", \"7f2958eec97d\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Key Dates & Deadlines\",\n      \"content\": \"Key dates include April 1, 2024, March 31, 2025, and April 15, 2024 [857306549920, 2d7d5fb335ce].\",\n      \"supporting_chunk_ids\": [\"857306549920\", \"2d7d5fb335ce\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Financial Terms\",\n      \"content\": \"The monthly rent is Rs. 22,000/- and the security deposit is Rs. 66,000/- [63ec09f6bf62, ebc26f7dd819].\",\n      \"supporting_chunk_ids\": [\"63ec09f6bf62\", \"ebc26f7dd819\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Key Obligations & Clauses\",\n      \"content\": \"The tenant shall pay rent by the 5th of each month and the landlord is responsible for major structural repairs [86900ccabd38, f868eb2922e4].\",\n      \"supporting_chunk_ids\": [\"86900ccabd38\", \"f868eb2922e4\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Flags & Risk Items\",\n      \"content\": \"Flags include [FLAG - UNFAVORABLE], [FLAG - REVIEWNEEDED], and liability cap at 3 months contract value [9e24d5f353a3].\",\n      \"supporting_chunk_ids\": [\"9e24d5f353a3\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Recommended Actions\",\n      \"content\": \"Recommended actions include negotiating Clause 4.2, Clause 8.1, and obtaining legal sign-off before execution [c5dcd7449c50, 2d7d5fb335ce].\",\n      \"supporting_chunk_ids\": [\"c5dcd7449c50\", \"2d7d5fb335ce\"],\n      \"confidence\": \"supported\"\n    }\n  ]\n}",
+  "evidence_used": [
+    {
+      "chunk_id": "857306549920",
+      "score": 0.8347272276878357,
+      "text": "LEASEAGREEM ENT\n(Residentiai Tenancy)\n\nDat e: March 15, 2024 \n\nPARTIES:\nLandlord: Rajesh Mehta, S/O "
+    },
+    {
+      "chunk_id": "86900ccabd38",
+      "score": 0.6885706186294556,
+      "text": "rch 31, 2025\n(12 months, renewable by mutual consent)\n\nTERMSAND CONDITIONS:\n\n1. RENTPAYMENT: Tenant "
+    },
+    {
+      "chunk_id": "ebc26f7dd819",
+      "score": 0.6839922070503235,
+      "text": "hl y Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three mont"
+    },
+    {
+      "chunk_id": "f868eb2922e4",
+      "score": 0.6366837024688721,
+      "text": "repairs (below Rs. 500/-) by tenant.\n Major structural repairs by landlord.\n\n3. SUBLETTING: Tenant s"
+    },
+    {
+      "chunk_id": "c5dcd7449c50",
+      "score": 0.5552182197570801,
+      "text": "WNERSHIP [OK]:\n Clause 15 clearly assigns all custom development IP to Ambitio.\n\nRECOMMENDEDACTIONS:"
+    },
+    {
+      "chunk_id": "2d7d5fb335ce",
+      "score": 0.5525046586990356,
+      "text": "iate Clause 13.4 (termination notice)\n- Obtain legal sign-off before execution\n\nDEADLINE: Contract e"
+    },
+    {
+      "chunk_id": "63ec09f6bf62",
+      "score": 0.5521478056907654,
+      "text": "s: Flat 3C, Sunrise Apts, Baner Rd, Pune\n\nPROPERT Y DETAILS:\nPremises: Flat No. 3C, 2nd Floor, Sunri"
+    },
+    {
+      "chunk_id": "00959a394e4e",
+      "score": 0.5299981236457825,
+      "text": "Rajesh Mehta Tenant Signature: Ananya Sharma\nDate: 15/03/2024 Date: 15/03/2024\n\n[NOTE: Page 2 of ori"
+    },
+    {
+      "chunk_id": "bf058e9754ca",
+      "score": 0.5011849403381348,
+      "text": "onths from commencement. Early vacating forfeits\n 1 month security deposit.\n\n7. PETS: No pets allowe"
+    },
+    {
+      "chunk_id": "6c7ecceb60a5",
+      "score": 0.4637891948223114,
+      "text": "lord.\n\n4. UTILITIES: Electricity, water charges payable by Tenant directly.\n\n5. NOTICEPERIOD: Either"
+    },
+    {
+      "chunk_id": "3eb7e0b6d3c4",
+      "score": 0.4432719349861145,
+      "text": "leave\"]\n\nBACKGROUND:\nPlaintiff alleges non-payment of final installment of Rs. 14,75,000/-\ndue on co"
+    },
+    {
+      "chunk_id": "9e24d5f353a3",
+      "score": 0.44071149826049805,
+      "text": "s. 12,00,000/-)\n before service commencement. Recommend negotiating to 10%.\n\n2. LIABILITYCAP [FLAG -"
+    },
+    {
+      "chunk_id": "7f2958eec97d",
+      "score": 0.4237140119075775,
+      "text": "INTHE COURTOF CIVILJUDGE (SENIORDIVISION)\nPUNE\n\nCase No.: CIV/2024/1847\n\nBETWEEN:\n Plaintiff: M/s Te"
+    },
+    {
+      "chunk_id": "f2ccd7ac1644",
+      "score": 0.3138526678085327,
+      "text": "out written permission.\n\nWITNESSES:\n1. _______________ (Signature illegible)\n2. _______________ (Sig"
+    }
+  ],
+  "model": "llama-3.3-70b-versatile"
+}

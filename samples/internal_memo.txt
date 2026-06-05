@@ -1,0 +1,49 @@
+
+INTERNAL  MEMORANDUM
+CONFIDENTIAL
+
+TO:      Legal  Review  Team
+FROM:    Priya  Kulkarni,  Head  -  Contracts
+DATE:    April  3,  2024
+RE:      Contract  Review  -  Vendor  Agreement  #VA-2024-089
+
+This  memo  summarizes  key  findings  from  review  of  Vendor Agreement
+VA-2024-089  between  Ambitio  Education  Pvt.  Ltd.  and  DataSoft
+Solutions  Ltd.
+
+CONTRACT  VALUE:  Rs. 48,00,000/-  per  annum
+CONTRACT  PERIOD:  April  1,  2024  to  March  31,  2026  (2  years)
+RENEWAL:  Auto-renewal  unless  terminated  90  days  prior
+
+KEY  FINDINGS:
+
+1.  PAYMENT  TERMS  [FLAG - UNFAVORABLE]:
+    Clause  4.2  requires  advance  payment  of  25%  (Rs.  12,00,000/-)
+    before  service  commencement.  Recommend  negotiating  to  10%.
+
+2.  LIABILITY  CAP  [FLAG - REVIEW  NEEDED]:
+    Clause  8.1  caps  vendor  liability  at  3  months  contract  value
+    (Rs.  12,00,000/-).  Industry  standard  is  typically  6-12  months.
+
+3.  DATA  PRIVACY  [OK]:
+    Clause  11  includes  adequate  DPDP  Act  2023  compliance  provisions.
+    Data  processing  agreement  attached  as  Annexure  C.
+
+4.  TERMINATION  [FLAG]:
+    Clause  13.4  allows  vendor  to  terminate  with  only  30  days  notice
+    if  client  fails  2  consecutive  payment  cycles.  Risk:  operational
+    disruption.  Recommend  extending  to  60  days.
+
+5.  IP  OWNERSHIP  [OK]:
+    Clause  15  clearly  assigns  all  custom  development  IP  to  Ambitio.
+
+RECOMMENDED  ACTIONS:
+- Negotiate  Clause  4.2  (advance  payment)
+- Negotiate  Clause  8.1  (liability  cap)
+- Negotiate  Clause  13.4  (termination  notice)
+- Obtain  legal  sign-off  before  execution
+
+DEADLINE:  Contract  execution  targeted  for  April  15,  2024.
+           Negotiation  window:  April  3-10,  2024.
+
+[Post-it note scanned]: "Shivam - pls  review  cls 8  urgently - PK"

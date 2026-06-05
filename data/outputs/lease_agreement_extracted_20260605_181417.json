@@ -1,0 +1,29 @@
+{
+  "source_file": "C:\\Users\\DELL\\Downloads\\ambitio-assessment-groq\\ambitio-assessment\\samples\\lease_agreement.txt",
+  "raw_text": "LEASEAGREEM ENT\n(Residentiai Tenancy)\n\nDat e: March 15, 2024 \n\nPARTIES:\nLandlord: Rajesh Mehta, S/O Suresh Mehta\nAddress : 42-B, Koregaon Park, Pune - 411OO1\n\nTenant : Ananya Sharma\nAddress: Flat 3C, Sunrise Apts, Baner Rd, Pune\n\nPROPERT Y DETAILS:\nPremises: Flat No. 3C, 2nd Floor, Sunrise Apartments\nArea: 850 sq.ft (approx)\nMonthl y Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three months rent)\n\nTENANCYPERIOD:\nCommencement Date: April 1, 2024\nTermination Date: March 31, 2025\n(12 months, renewable by mutual consent)\n\nTERMSAND CONDITIONS:\n\n1. RENTPAYMENT: Tenant shall pay rent by 5th of each month.\n Late payment attracts penalty of Rs. 500/- per day.\n\n2. MAINTENANCE: Minor repairs (below Rs. 500/-) by tenant.\n Major structural repairs by landlord.\n\n3. SUBLETTING: Tenant shall NOT sublet or assign premises\n without written consent of Landlord.\n\n4. UTILITIES: Electricity, water charges payable by Tenant directly.\n\n5. NOTICEPERIOD: Either party to give 2 months written notice\n for termination before lease expiry.\n\n6. LOCK-INPERIOD: 6 months from commencement. Early vacating forfeits\n 1 month security deposit.\n\n7. PETS: No pets allowed on premises without written permission.\n\nWITNESSES:\n1. _______________ (Signature illegible)\n2. _______________ (Signature illegible)\n\nLandlord Signature: Rajesh Mehta Tenant Signature: Ananya Sharma\nDate: 15/03/2024 Date: 15/03/2024\n\n[NOTE: Page 2 of original document - water damaged, partially unreadable]\nStamp Duty Paid: Rs. 5OO/- Registration No.: ___[illegible]___",
+  "pages": [
+    "LEASEAGREEM ENT\n(Residentiai Tenancy)\n\nDat e: March 15, 2024 \n\nPARTIES:\nLandlord: Rajesh Mehta, S/O Suresh Mehta\nAddress : 42-B, Koregaon Park, Pune - 411OO1\n\nTenant : Ananya Sharma\nAddress: Flat 3C, Sunrise Apts, Baner Rd, Pune\n\nPROPERT Y DETAILS:\nPremises: Flat No. 3C, 2nd Floor, Sunrise Apartments\nArea: 850 sq.ft (approx)\nMonthl y Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three months rent)\n\nTENANCYPERIOD:\nCommencement Date: April 1, 2024\nTermination Date: March 31, 2025\n(12 months, renewable by mutual consent)\n\nTERMSAND CONDITIONS:\n\n1. RENTPAYMENT: Tenant shall pay rent by 5th of each month.\n Late payment attracts penalty of Rs. 500/- per day.\n\n2. MAINTENANCE: Minor repairs (below Rs. 500/-) by tenant.\n Major structural repairs by landlord.\n\n3. SUBLETTING: Tenant shall NOT sublet or assign premises\n without written consent of Landlord.\n\n4. UTILITIES: Electricity, water charges payable by Tenant directly.\n\n5. NOTICEPERIOD: Either party to give 2 months written notice\n for termination before lease expiry.\n\n6. LOCK-INPERIOD: 6 months from commencement. Early vacating forfeits\n 1 month security deposit.\n\n7. PETS: No pets allowed on premises without written permission.\n\nWITNESSES:\n1. _______________ (Signature illegible)\n2. _______________ (Signature illegible)\n\nLandlord Signature: Rajesh Mehta Tenant Signature: Ananya Sharma\nDate: 15/03/2024 Date: 15/03/2024\n\n[NOTE: Page 2 of original document - water damaged, partially unreadable]\nStamp Duty Paid: Rs. 5OO/- Registration No.: ___[illegible]___"
+  ],
+  "structured_fields": {
+    "dates": [
+      "March 15, 2024",
+      "April 1, 2024",
+      "March 31, 2025",
+      "15/03/2024"
+    ],
+    "amounts": [
+      "Rs. 22,000/- (Rupees Twenty Two Thousand Only)",
+      "Rs. 66,000/- (Three months rent)",
+      "Rs. 500/-",
+      "Rs. 5"
+    ],
+    "parties": [
+      "Rajesh Mehta, S/O Suresh Mehta",
+      "Ananya Sharma"
+    ],
+    "document_type": "Lease Agreement"
+  },
+  "extraction_method": "text",
+  "confidence": "high",
+  "warnings": []
+}

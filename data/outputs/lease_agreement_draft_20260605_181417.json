@@ -1,0 +1,146 @@
+{
+  "document_name": "lease_agreement.txt",
+  "draft_type": "Case Fact Summary",
+  "sections": [
+    {
+      "heading": "Document Overview",
+      "content": "The document is a Lease Agreement [86900ccabd38] for a residential tenancy, signed on March 15, 2024 [4f879e060157].",
+      "supporting_chunk_ids": [
+        "86900ccabd38",
+        "4f879e060157"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Parties Involved",
+      "content": "The parties involved are Rajesh Mehta, S/O Suresh Mehta (Landlord) and Ananya Sharma (Tenant) [cd1dbbdfe761].",
+      "supporting_chunk_ids": [
+        "cd1dbbdfe761"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Key Dates & Deadlines",
+      "content": "The commencement date is April 1, 2024, and the termination date is March 31, 2025 [162c4287aedc].",
+      "supporting_chunk_ids": [
+        "162c4287aedc"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Financial Terms",
+      "content": "The monthly rent is Rs. 22,000/- and the security deposit is Rs. 66,000/- (three months' rent) [162c4287aedc].",
+      "supporting_chunk_ids": [
+        "162c4287aedc"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Key Obligations & Clauses",
+      "content": "The tenant is responsible for minor repairs (below Rs. 500/-) and the landlord is responsible for major structural repairs [86900ccabd38]. The tenant shall not sublet or assign premises without written consent of the landlord [83a08fa9a4f0].",
+      "supporting_chunk_ids": [
+        "86900ccabd38",
+        "83a08fa9a4f0"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Flags & Risk Items",
+      "content": "Late payment attracts a penalty of Rs. 500/- per day [86900ccabd38].",
+      "supporting_chunk_ids": [
+        "86900ccabd38"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Recommended Actions",
+      "content": "[UNSUPPORTED]",
+      "supporting_chunk_ids": [],
+      "confidence": "unsupported"
+    }
+  ],
+  "raw_llm_output": "{\n  \"sections\": [\n    {\n      \"heading\": \"Document Overview\",\n      \"content\": \"The document is a Lease Agreement [86900ccabd38] for a residential tenancy, signed on March 15, 2024 [4f879e060157].\",\n      \"supporting_chunk_ids\": [\"86900ccabd38\", \"4f879e060157\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Parties Involved\",\n      \"content\": \"The parties involved are Rajesh Mehta, S/O Suresh Mehta (Landlord) and Ananya Sharma (Tenant) [cd1dbbdfe761].\",\n      \"supporting_chunk_ids\": [\"cd1dbbdfe761\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Key Dates & Deadlines\",\n      \"content\": \"The commencement date is April 1, 2024, and the termination date is March 31, 2025 [162c4287aedc].\",\n      \"supporting_chunk_ids\": [\"162c4287aedc\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Financial Terms\",\n      \"content\": \"The monthly rent is Rs. 22,000/- and the security deposit is Rs. 66,000/- (three months' rent) [162c4287aedc].\",\n      \"supporting_chunk_ids\": [\"162c4287aedc\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Key Obligations & Clauses\",\n      \"content\": \"The tenant is responsible for minor repairs (below Rs. 500/-) and the landlord is responsible for major structural repairs [86900ccabd38]. The tenant shall not sublet or assign premises without written consent of the landlord [83a08fa9a4f0].\",\n      \"supporting_chunk_ids\": [\"86900ccabd38\", \"83a08fa9a4f0\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Flags & Risk Items\",\n      \"content\": \"Late payment attracts a penalty of Rs. 500/- per day [86900ccabd38].\",\n      \"supporting_chunk_ids\": [\"86900ccabd38\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Recommended Actions\",\n      \"content\": \"[UNSUPPORTED]\",\n      \"supporting_chunk_ids\": [],\n      \"confidence\": \"unsupported\"\n    }\n  ]\n}",
+  "evidence_used": [
+    {
+      "chunk_id": "86900ccabd38",
+      "score": 0.6432487964630127,
+      "text": "rch 31, 2025\n(12 months, renewable by mutual consent)\n\nTERMSAND CONDITIONS:\n\n1. RENTPAYMENT: Tenant "
+    },
+    {
+      "chunk_id": "162c4287aedc",
+      "score": 0.6158483028411865,
+      "text": "hl y Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three mont"
+    },
+    {
+      "chunk_id": "ebc26f7dd819",
+      "score": 0.6158483028411865,
+      "text": "hl y Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three mont"
+    },
+    {
+      "chunk_id": "4f879e060157",
+      "score": 0.597425103187561,
+      "text": "Rajesh Mehta Tenant Signature: Ananya Sharma\nDate: 15/03/2024 Date: 15/03/2024\n\n[NOTE: Page 2 of ori"
+    },
+    {
+      "chunk_id": "00959a394e4e",
+      "score": 0.597425103187561,
+      "text": "Rajesh Mehta Tenant Signature: Ananya Sharma\nDate: 15/03/2024 Date: 15/03/2024\n\n[NOTE: Page 2 of ori"
+    },
+    {
+      "chunk_id": "2d7d5fb335ce",
+      "score": 0.5535954236984253,
+      "text": "iate Clause 13.4 (termination notice)\n- Obtain legal sign-off before execution\n\nDEADLINE: Contract e"
+    },
+    {
+      "chunk_id": "c5dcd7449c50",
+      "score": 0.5535538196563721,
+      "text": "WNERSHIP [OK]:\n Clause 15 clearly assigns all custom development IP to Ambitio.\n\nRECOMMENDEDACTIONS:"
+    },
+    {
+      "chunk_id": "cd1dbbdfe761",
+      "score": 0.5457386374473572,
+      "text": "LEASEAGREEM ENT\n(Residentiai Tenancy)\n\nDat e: March 15, 2024 \n\nPARTIES:\nLandlord: Rajesh Mehta, S/O "
+    },
+    {
+      "chunk_id": "83a08fa9a4f0",
+      "score": 0.5226160287857056,
+      "text": "repairs (below Rs. 500/-) by tenant.\n Major structural repairs by landlord.\n\n3. SUBLETTING: Tenant s"
+    },
+    {
+      "chunk_id": "f868eb2922e4",
+      "score": 0.5226160287857056,
+      "text": "repairs (below Rs. 500/-) by tenant.\n Major structural repairs by landlord.\n\n3. SUBLETTING: Tenant s"
+    },
+    {
+      "chunk_id": "5d538e54569f",
+      "score": 0.49906864762306213,
+      "text": "s: Flat 3C, Sunrise Apts, Baner Rd, Pune\n\nPROPERT Y DETAILS:\nPremises: Flat No. 3C, 2nd Floor, Sunri"
+    },
+    {
+      "chunk_id": "3eb7e0b6d3c4",
+      "score": 0.4949929416179657,
+      "text": "leave\"]\n\nBACKGROUND:\nPlaintiff alleges non-payment of final installment of Rs. 14,75,000/-\ndue on co"
+    },
+    {
+      "chunk_id": "6c7ecceb60a5",
+      "score": 0.47567883133888245,
+      "text": "lord.\n\n4. UTILITIES: Electricity, water charges payable by Tenant directly.\n\n5. NOTICEPERIOD: Either"
+    },
+    {
+      "chunk_id": "9e24d5f353a3",
+      "score": 0.4551638960838318,
+      "text": "s. 12,00,000/-)\n before service commencement. Recommend negotiating to 10%.\n\n2. LIABILITYCAP [FLAG -"
+    },
+    {
+      "chunk_id": "63ec09f6bf62",
+      "score": 0.0,
+      "text": "s: Flat 3C, Sunrise Apts, Baner Rd, Pune\n\nPROPERT Y DETAILS:\nPremises: Flat No. 3C, 2nd Floor, Sunri"
+    },
+    {
+      "chunk_id": "857306549920",
+      "score": 0.0,
+      "text": "LEASEAGREEM ENT\n(Residentiai Tenancy)\n\nDat e: March 15, 2024 \n\nPARTIES:\nLandlord: Rajesh Mehta, S/O "
+    }
+  ],
+  "model": "llama-3.3-70b-versatile"
+}

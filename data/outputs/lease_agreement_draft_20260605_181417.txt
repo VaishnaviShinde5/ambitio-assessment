@@ -1,0 +1,35 @@
+============================================================
+DRAFT: CASE FACT SUMMARY
+Document: lease_agreement.txt
+Model: llama-3.3-70b-versatile
+============================================================
+
+## Document Overview
+The document is a Lease Agreement [86900ccabd38] for a residential tenancy, signed on March 15, 2024 [4f879e060157].
+  [Evidence: 86900ccabd38, 4f879e060157]
+
+## Parties Involved
+The parties involved are Rajesh Mehta, S/O Suresh Mehta (Landlord) and Ananya Sharma (Tenant) [cd1dbbdfe761].
+  [Evidence: cd1dbbdfe761]
+
+## Key Dates & Deadlines
+The commencement date is April 1, 2024, and the termination date is March 31, 2025 [162c4287aedc].
+  [Evidence: 162c4287aedc]
+
+## Financial Terms
+The monthly rent is Rs. 22,000/- and the security deposit is Rs. 66,000/- (three months' rent) [162c4287aedc].
+  [Evidence: 162c4287aedc]
+
+## Key Obligations & Clauses
+The tenant is responsible for minor repairs (below Rs. 500/-) and the landlord is responsible for major structural repairs [86900ccabd38]. The tenant shall not sublet or assign premises without written consent of the landlord [83a08fa9a4f0].
+  [Evidence: 86900ccabd38, 83a08fa9a4f0]
+
+## Flags & Risk Items
+Late payment attracts a penalty of Rs. 500/- per day [86900ccabd38].
+  [Evidence: 86900ccabd38]
+
+## Recommended Actions
+[UNSUPPORTED]
+
+============================================================
+Evidence blocks used: 16

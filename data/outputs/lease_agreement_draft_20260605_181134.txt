@@ -1,0 +1,36 @@
+============================================================
+DRAFT: CASE FACT SUMMARY
+Document: lease_agreement.txt
+Model: llama-3.3-70b-versatile
+============================================================
+
+## Document Overview
+The document is a Lease Agreement between the landlord and the tenant for a residential tenancy, signed on [6c7ecceb60a5] and [857306549920].
+  [Evidence: 6c7ecceb60a5, 857306549920]
+
+## Parties Involved
+The parties involved are Rajesh Mehta, S/O Suresh Mehta, as the landlord, and Ananya Sharma, as the tenant, as stated in [857306549920].
+  [Evidence: 857306549920]
+
+## Key Dates & Deadlines
+The key dates include the commencement date of April 1, 2024, and the termination date of March 31, 2025, as mentioned in [ebc26f7dd819]. The notice period is 2 months, as stated in [6c7ecceb60a5].
+  [Evidence: ebc26f7dd819, 6c7ecceb60a5]
+
+## Financial Terms
+The monthly rent is Rs. 22,000/-, and the security deposit is Rs. 66,000/-, which is three months' rent, as mentioned in [ebc26f7dd819].
+  [Evidence: ebc26f7dd819]
+
+## Key Obligations & Clauses
+The tenant is responsible for minor repairs below Rs. 500/-, and the landlord is responsible for major structural repairs, as stated in [86900ccabd38]. The tenant shall not sublet or assign premises without written consent of the landlord, as mentioned in [f868eb2922e4].
+  [Evidence: 86900ccabd38, f868eb2922e4]
+
+## Flags & Risk Items
+Early vacating forfeits 1 month security deposit, as mentioned in [bf058e9754ca].
+  [Evidence: bf058e9754ca]
+
+## Recommended Actions
+Review the agreement for any discrepancies or omissions, and ensure that all parties understand their obligations and responsibilities, as the document has some partially unreadable sections [00959a394e4e].
+  [Evidence: 00959a394e4e]
+
+============================================================
+Evidence blocks used: 9

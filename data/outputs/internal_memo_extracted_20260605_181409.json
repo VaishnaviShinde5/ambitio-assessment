@@ -1,0 +1,44 @@
+{
+  "source_file": "C:\\Users\\DELL\\Downloads\\ambitio-assessment-groq\\ambitio-assessment\\samples\\internal_memo.txt",
+  "raw_text": "INTERNALMEMORANDUM\nCONFIDENTIALTO: Legal Review Team\nFROM: Priya Kulkarni, Head - Contracts\nDATE: April 3, 2024\nRE: Contract Review - Vendor Agreement #VA-2024-089\n\nThis memo summarizes key findings from review of Vendor Agreement\nVA-2024-089 between Ambitio Education Pvt. Ltd. and DataSoft\nSolutions Ltd.\n\nCONTRACTVALUE: Rs. 48,00,000/- per annum\nCONTRACTPERIOD: April 1, 2024 to March 31, 2026 (2 years)\nRENEWAL: Auto-renewal unless terminated 90 days prior\n\nKEYFINDINGS:\n\n1. PAYMENTTERMS [FLAG - UNFAVORABLE]:\n Clause 4.2 requires advance payment of 25% (Rs. 12,00,000/-)\n before service commencement. Recommend negotiating to 10%.\n\n2. LIABILITYCAP [FLAG - REVIEWNEEDED]:\n Clause 8.1 caps vendor liability at 3 months contract value\n (Rs. 12,00,000/-). Industry standard is typically 6-12 months.\n\n3. DATAPRIVACY [OK]:\n Clause 11 includes adequate DPDP Act 2023 compliance provisions.\n Data processing agreement attached as Annexure C.\n\n4. TERMINATION [FLAG]:\n Clause 13.4 allows vendor to terminate with only 30 days notice\n if client fails 2 consecutive payment cycles. Risk: operational\n disruption. Recommend extending to 60 days.\n\n5. IPOWNERSHIP [OK]:\n Clause 15 clearly assigns all custom development IP to Ambitio.\n\nRECOMMENDEDACTIONS:\n- Negotiate Clause 4.2 (advance payment)\n- Negotiate Clause 8.1 (liability cap)\n- Negotiate Clause 13.4 (termination notice)\n- Obtain legal sign-off before execution\n\nDEADLINE: Contract execution targeted for April 15, 2024.\n Negotiation window: April 3-10, 2024.\n\n[Post-it note scanned]: \"Shivam - pls review cls 8 urgently - PK\"",
+  "pages": [
+    "INTERNALMEMORANDUM\nCONFIDENTIALTO: Legal Review Team\nFROM: Priya Kulkarni, Head - Contracts\nDATE: April 3, 2024\nRE: Contract Review - Vendor Agreement #VA-2024-089\n\nThis memo summarizes key findings from review of Vendor Agreement\nVA-2024-089 between Ambitio Education Pvt. Ltd. and DataSoft\nSolutions Ltd.\n\nCONTRACTVALUE: Rs. 48,00,000/- per annum\nCONTRACTPERIOD: April 1, 2024 to March 31, 2026 (2 years)\nRENEWAL: Auto-renewal unless terminated 90 days prior\n\nKEYFINDINGS:\n\n1. PAYMENTTERMS [FLAG - UNFAVORABLE]:\n Clause 4.2 requires advance payment of 25% (Rs. 12,00,000/-)\n before service commencement. Recommend negotiating to 10%.\n\n2. LIABILITYCAP [FLAG - REVIEWNEEDED]:\n Clause 8.1 caps vendor liability at 3 months contract value\n (Rs. 12,00,000/-). Industry standard is typically 6-12 months.\n\n3. DATAPRIVACY [OK]:\n Clause 11 includes adequate DPDP Act 2023 compliance provisions.\n Data processing agreement attached as Annexure C.\n\n4. TERMINATION [FLAG]:\n Clause 13.4 allows vendor to terminate with only 30 days notice\n if client fails 2 consecutive payment cycles. Risk: operational\n disruption. Recommend extending to 60 days.\n\n5. IPOWNERSHIP [OK]:\n Clause 15 clearly assigns all custom development IP to Ambitio.\n\nRECOMMENDEDACTIONS:\n- Negotiate Clause 4.2 (advance payment)\n- Negotiate Clause 8.1 (liability cap)\n- Negotiate Clause 13.4 (termination notice)\n- Obtain legal sign-off before execution\n\nDEADLINE: Contract execution targeted for April 15, 2024.\n Negotiation window: April 3-10, 2024.\n\n[Post-it note scanned]: \"Shivam - pls review cls 8 urgently - PK\""
+  ],
+  "structured_fields": {
+    "dates": [
+      "April 3, 2024",
+      "April 1, 2024",
+      "March 31, 2026",
+      "April 15, 2024"
+    ],
+    "amounts": [
+      "Rs. 48,00,000/-",
+      "Rs. 12,00,000/-"
+    ],
+    "parties": [
+      "Legal Review Team",
+      "Priya Kulkarni, Head - Contracts"
+    ],
+    "contract_ids": [
+      "Contracts",
+      "Contract Review",
+      "Vendor Agreement",
+      "CONTRACTVALUE",
+      "CONTRACTPERIOD",
+      "vendor liability",
+      "contract value",
+      "agreement attached",
+      "vendor to",
+      "Contract execution"
+    ],
+    "flags": [
+      "[FLAG - UNFAVORABLE]",
+      "[FLAG - REVIEWNEEDED]",
+      "[FLAG]"
+    ],
+    "document_type": "Court Notice"
+  },
+  "extraction_method": "text",
+  "confidence": "high",
+  "warnings": []
+}

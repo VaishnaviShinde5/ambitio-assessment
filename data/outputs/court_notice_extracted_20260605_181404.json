@@ -1,0 +1,32 @@
+{
+  "source_file": "C:\\Users\\DELL\\Downloads\\ambitio-assessment-groq\\ambitio-assessment\\samples\\court_notice.txt",
+  "raw_text": "INTHE COURTOF CIVILJUDGE (SENIORDIVISION)\nPUNE\n\nCase No.: CIV/2024/1847\n\nBETWEEN:\n Plaintiff: M/s TechBuild Constructions Pvt. Ltd.\n Reg. Office: Plot 12, Hinjewadi Phase 2, Pune - 411057\n\n AND\n\n Defendant: Mr. Vikram Nair\n Residing at: B-204, Green Valley Society, Wakad, Pune\n\nNOTICEOF HEARING\n\nYou are hereby directed to appear before this Court on:\nDate: 22nd April, 2024\nTime: 10:30 A.M.\nCourtroom: No. 7, District Court Complex, Shivajinagar, Pune\n\nSUBJECT: Recovery of dues amounting to Rs. 14,75,000/-\n (Rupees Fourteen Lakhs Seventy Five Thousand Only)\n in respect of construction contract dated June 10, 2023.\n\n[Handwritten annotation: \"Adj. to 29 Apr - judge on leave\"]\n\nBACKGROUND:\nPlaintiff alleges non-payment of final installment of Rs. 14,75,000/-\ndue on completion of construction at Wakad property.\nDefendant contends work was incomplete/defective.\n\nDOCUMENTSTO BEPRODUCED:\n- Original contract dated June 10, 2023\n- Completion certificate (if any)\n- Payment receipts / bank statements\n- Photographs of alleged defects (Defendant)\n\nFailure to appear will result in ex-parte proceedings.\n\nIssued by:\nRegistrar, Civil Court Pune\nDate of Issue: March 20, 2024\nSeal: [SMUDGED]\n\n[Handwritten note at bottom]: \"Client informed - call 98XXXXXXXX\"",
+  "pages": [
+    "INTHE COURTOF CIVILJUDGE (SENIORDIVISION)\nPUNE\n\nCase No.: CIV/2024/1847\n\nBETWEEN:\n Plaintiff: M/s TechBuild Constructions Pvt. Ltd.\n Reg. Office: Plot 12, Hinjewadi Phase 2, Pune - 411057\n\n AND\n\n Defendant: Mr. Vikram Nair\n Residing at: B-204, Green Valley Society, Wakad, Pune\n\nNOTICEOF HEARING\n\nYou are hereby directed to appear before this Court on:\nDate: 22nd April, 2024\nTime: 10:30 A.M.\nCourtroom: No. 7, District Court Complex, Shivajinagar, Pune\n\nSUBJECT: Recovery of dues amounting to Rs. 14,75,000/-\n (Rupees Fourteen Lakhs Seventy Five Thousand Only)\n in respect of construction contract dated June 10, 2023.\n\n[Handwritten annotation: \"Adj. to 29 Apr - judge on leave\"]\n\nBACKGROUND:\nPlaintiff alleges non-payment of final installment of Rs. 14,75,000/-\ndue on completion of construction at Wakad property.\nDefendant contends work was incomplete/defective.\n\nDOCUMENTSTO BEPRODUCED:\n- Original contract dated June 10, 2023\n- Completion certificate (if any)\n- Payment receipts / bank statements\n- Photographs of alleged defects (Defendant)\n\nFailure to appear will result in ex-parte proceedings.\n\nIssued by:\nRegistrar, Civil Court Pune\nDate of Issue: March 20, 2024\nSeal: [SMUDGED]\n\n[Handwritten note at bottom]: \"Client informed - call 98XXXXXXXX\""
+  ],
+  "structured_fields": {
+    "dates": [
+      "22nd April, 2024",
+      "June 10, 2023",
+      "March 20, 2024"
+    ],
+    "amounts": [
+      "Rs. 14,75,000/-\n (Rupees Fourteen Lakhs Seventy Five Thousand Only)",
+      "Rs. 14,75,000/-"
+    ],
+    "case_numbers": [
+      "CIV/2024/1847"
+    ],
+    "parties": [
+      "M/s TechBuild Constructions Pvt. Ltd.",
+      "Mr. Vikram Nair"
+    ],
+    "contract_ids": [
+      "contract dated"
+    ],
+    "document_type": "Court Notice"
+  },
+  "extraction_method": "text",
+  "confidence": "high",
+  "warnings": []
+}

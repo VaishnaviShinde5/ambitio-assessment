@@ -1,0 +1,34 @@
+============================================================
+DRAFT: CASE FACT SUMMARY
+Document: court_notice.txt
+Model: llama-3.3-70b-versatile
+============================================================
+
+## Document Overview
+The document is a court notice [3eb7e0b6d3c4] related to a case between M/s TechBuild Constructions Pvt. Ltd. and Mr. Vikram Nair [7f2958eec97d].
+  [Evidence: 3eb7e0b6d3c4, 7f2958eec97d]
+
+## Parties Involved
+The parties involved are M/s TechBuild Constructions Pvt. Ltd. [7f2958eec97d] and Mr. Vikram Nair [7f2958eec97d].
+  [Evidence: 7f2958eec97d]
+
+## Key Dates & Deadlines
+The key dates mentioned are June 10, 2023, March 20, 2024, and April 22, 2024 [UNSUPPORTED].
+
+## Financial Terms
+The amount of Rs. 14,75,000/- is mentioned as the final installment due on completion of construction [3eb7e0b6d3c4].
+  [Evidence: 3eb7e0b6d3c4]
+
+## Key Obligations & Clauses
+The lease agreement [6c7ecceb60a5] mentions a lock-in period of 6 months, and the tenant is responsible for paying utilities [6c7ecceb60a5].
+  [Evidence: 6c7ecceb60a5]
+
+## Flags & Risk Items
+The defendant contends that the work was incomplete/defective [3eb7e0b6d3c4].
+  [Evidence: 3eb7e0b6d3c4]
+
+## Recommended Actions
+The recommended actions are [UNSUPPORTED].
+
+============================================================
+Evidence blocks used: 11

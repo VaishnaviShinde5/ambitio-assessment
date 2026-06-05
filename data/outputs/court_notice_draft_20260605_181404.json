@@ -1,0 +1,118 @@
+{
+  "document_name": "court_notice.txt",
+  "draft_type": "Case Fact Summary",
+  "sections": [
+    {
+      "heading": "Document Overview",
+      "content": "The document is a court notice [3eb7e0b6d3c4] related to a case between M/s TechBuild Constructions Pvt. Ltd. and Mr. Vikram Nair [7f2958eec97d].",
+      "supporting_chunk_ids": [
+        "3eb7e0b6d3c4",
+        "7f2958eec97d"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Parties Involved",
+      "content": "The parties involved are M/s TechBuild Constructions Pvt. Ltd. [7f2958eec97d] and Mr. Vikram Nair [7f2958eec97d].",
+      "supporting_chunk_ids": [
+        "7f2958eec97d"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Key Dates & Deadlines",
+      "content": "The key dates mentioned are June 10, 2023, March 20, 2024, and April 22, 2024 [UNSUPPORTED].",
+      "supporting_chunk_ids": [],
+      "confidence": "unsupported"
+    },
+    {
+      "heading": "Financial Terms",
+      "content": "The amount of Rs. 14,75,000/- is mentioned as the final installment due on completion of construction [3eb7e0b6d3c4].",
+      "supporting_chunk_ids": [
+        "3eb7e0b6d3c4"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Key Obligations & Clauses",
+      "content": "The lease agreement [6c7ecceb60a5] mentions a lock-in period of 6 months, and the tenant is responsible for paying utilities [6c7ecceb60a5].",
+      "supporting_chunk_ids": [
+        "6c7ecceb60a5"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Flags & Risk Items",
+      "content": "The defendant contends that the work was incomplete/defective [3eb7e0b6d3c4].",
+      "supporting_chunk_ids": [
+        "3eb7e0b6d3c4"
+      ],
+      "confidence": "supported"
+    },
+    {
+      "heading": "Recommended Actions",
+      "content": "The recommended actions are [UNSUPPORTED].",
+      "supporting_chunk_ids": [],
+      "confidence": "unsupported"
+    }
+  ],
+  "raw_llm_output": "```json\n{\n  \"sections\": [\n    {\n      \"heading\": \"Document Overview\",\n      \"content\": \"The document is a court notice [3eb7e0b6d3c4] related to a case between M/s TechBuild Constructions Pvt. Ltd. and Mr. Vikram Nair [7f2958eec97d].\",\n      \"supporting_chunk_ids\": [\"3eb7e0b6d3c4\", \"7f2958eec97d\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Parties Involved\",\n      \"content\": \"The parties involved are M/s TechBuild Constructions Pvt. Ltd. [7f2958eec97d] and Mr. Vikram Nair [7f2958eec97d].\",\n      \"supporting_chunk_ids\": [\"7f2958eec97d\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Key Dates & Deadlines\",\n      \"content\": \"The key dates mentioned are June 10, 2023, March 20, 2024, and April 22, 2024 [UNSUPPORTED].\",\n      \"supporting_chunk_ids\": [],\n      \"confidence\": \"unsupported\"\n    },\n    {\n      \"heading\": \"Financial Terms\",\n      \"content\": \"The amount of Rs. 14,75,000/- is mentioned as the final installment due on completion of construction [3eb7e0b6d3c4].\",\n      \"supporting_chunk_ids\": [\"3eb7e0b6d3c4\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Key Obligations & Clauses\",\n      \"content\": \"The lease agreement [6c7ecceb60a5] mentions a lock-in period of 6 months, and the tenant is responsible for paying utilities [6c7ecceb60a5].\",\n      \"supporting_chunk_ids\": [\"6c7ecceb60a5\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Flags & Risk Items\",\n      \"content\": \"The defendant contends that the work was incomplete/defective [3eb7e0b6d3c4].\",\n      \"supporting_chunk_ids\": [\"3eb7e0b6d3c4\"],\n      \"confidence\": \"supported\"\n    },\n    {\n      \"heading\": \"Recommended Actions\",\n      \"content\": \"The recommended actions are [UNSUPPORTED].\",\n      \"supporting_chunk_ids\": [],\n      \"confidence\": \"unsupported\"\n    }\n  ]\n}\n```",
+  "evidence_used": [
+    {
+      "chunk_id": "6c7ecceb60a5",
+      "score": 0.8571299910545349,
+      "text": "lord.\n\n4. UTILITIES: Electricity, water charges payable by Tenant directly.\n\n5. NOTICEPERIOD: Either"
+    },
+    {
+      "chunk_id": "857306549920",
+      "score": 0.8420221209526062,
+      "text": "LEASEAGREEM ENT\n(Residentiai Tenancy)\n\nDat e: March 15, 2024 \n\nPARTIES:\nLandlord: Rajesh Mehta, S/O "
+    },
+    {
+      "chunk_id": "86900ccabd38",
+      "score": 0.701558530330658,
+      "text": "rch 31, 2025\n(12 months, renewable by mutual consent)\n\nTERMSAND CONDITIONS:\n\n1. RENTPAYMENT: Tenant "
+    },
+    {
+      "chunk_id": "f868eb2922e4",
+      "score": 0.6365599632263184,
+      "text": "repairs (below Rs. 500/-) by tenant.\n Major structural repairs by landlord.\n\n3. SUBLETTING: Tenant s"
+    },
+    {
+      "chunk_id": "63ec09f6bf62",
+      "score": 0.5602232217788696,
+      "text": "s: Flat 3C, Sunrise Apts, Baner Rd, Pune\n\nPROPERT Y DETAILS:\nPremises: Flat No. 3C, 2nd Floor, Sunri"
+    },
+    {
+      "chunk_id": "00959a394e4e",
+      "score": 0.5321662425994873,
+      "text": "Rajesh Mehta Tenant Signature: Ananya Sharma\nDate: 15/03/2024 Date: 15/03/2024\n\n[NOTE: Page 2 of ori"
+    },
+    {
+      "chunk_id": "ebc26f7dd819",
+      "score": 0.4965880513191223,
+      "text": "hl y Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three mont"
+    },
+    {
+      "chunk_id": "3eb7e0b6d3c4",
+      "score": 0.4517155587673187,
+      "text": "leave\"]\n\nBACKGROUND:\nPlaintiff alleges non-payment of final installment of Rs. 14,75,000/-\ndue on co"
+    },
+    {
+      "chunk_id": "7f2958eec97d",
+      "score": 0.42417338490486145,
+      "text": "INTHE COURTOF CIVILJUDGE (SENIORDIVISION)\nPUNE\n\nCase No.: CIV/2024/1847\n\nBETWEEN:\n Plaintiff: M/s Te"
+    },
+    {
+      "chunk_id": "f2ccd7ac1644",
+      "score": 0.3215847611427307,
+      "text": "out written permission.\n\nWITNESSES:\n1. _______________ (Signature illegible)\n2. _______________ (Sig"
+    },
+    {
+      "chunk_id": "bf058e9754ca",
+      "score": 0.28808796405792236,
+      "text": "onths from commencement. Early vacating forfeits\n 1 month security deposit.\n\n7. PETS: No pets allowe"
+    }
+  ],
+  "model": "llama-3.3-70b-versatile"
+}
