@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambitio Legal Document Pipeline</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #222222;
+    --border: #2e2e2e;
+    --red: #e53935;
+    --red-dim: #b71c1c;
+    --text: #e8e8e8;
+    --text-dim: #888;
+    --text-muted: #555;
+    --green: #4caf50;
+    --yellow: #ffc107;
+    --blue: #42a5f5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: -0.5px;
+  }
+
+  .logo span { color: var(--text-dim); font-weight: 300; }
+
+  .tagline {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+    border-left: 1px solid var(--border);
+    padding-left: 16px;
+  }
+
+  /* ── Layout ── */
+  .container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: calc(100vh - 57px);
+  }
+
+  /* ── Left Panel ── */
+  .left-panel {
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .panel-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  /* Upload Zone */
+  .upload-zone {
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--surface);
+  }
+
+  .upload-zone:hover, .upload-zone.drag-over {
+    border-color: var(--red);
+    background: #1f1414;
+  }
+
+  .upload-zone .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .upload-zone p {
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .upload-zone .formats {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  #fileInput { display: none; }
+
+  /* Sample buttons */
+  .sample-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .sample-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.15s;
+    text-align: left;
+    width: 100%;
+    color: var(--text);
+  }
+
+  .sample-btn:hover {
+    border-color: var(--red);
+    background: #1f1414;
+  }
+
+  .sample-btn.active {
+    border-color: var(--red);
+    background: #1f1414;
+  }
+
+  .sample-btn .doc-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .sample-btn .doc-info { flex: 1; }
+
+  .sample-btn .doc-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .sample-btn .doc-type {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* Pipeline steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .step-num.active { border-color: var(--yellow); color: var(--yellow); background: #1a1600; }
+  .step-num.done { border-color: var(--green); color: var(--green); background: #0d1a0d; }
+
+  .step-text { font-size: 12px; color: var(--text-dim); }
+  .step-text.active { color: var(--text); }
+  .step-text.done { color: var(--green); }
+
+  /* Learned preferences */
+  .pref-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .pref-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-dim);
+  }
+
+  .pref-item .count {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--red);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  .empty-prefs {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* ── Right Panel ── */
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface);
+  }
+
+  .btn {
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: white;
+  }
+
+  .btn-primary:hover { background: #c62828; }
+  .btn-primary:disabled { background: #3a1a1a; color: #666; cursor: not-allowed; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  .btn-secondary:hover { border-color: var(--text-dim); color: var(--text); }
+  .btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--green);
+    border: 1px solid var(--green);
+  }
+
+  .btn-ghost:hover { background: #0d1a0d; }
+  .btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .doc-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 4px 8px;
+  }
+
+  .spacer { flex: 1; }
+
+  .status-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .status-badge.running { background: #1a1600; color: var(--yellow); border: 1px solid #333300; }
+  .status-badge.done { background: #0d1a0d; color: var(--green); border: 1px solid #1a331a; }
+  .status-badge.error { background: #1a0d0d; color: var(--red); border: 1px solid #331a1a; }
+
+  /* Content area */
+  .content-area {
+    flex: 1;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Welcome screen */
+  .welcome {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--text-muted);
+    padding: 48px;
+  }
+
+  .welcome .big-icon { font-size: 48px; opacity: 0.3; }
+
+  .welcome h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-dim);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .welcome p {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  /* Draft panel */
+  .draft-panel {
+    border-right: 1px solid var(--border);
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .draft-header {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .draft-section {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .draft-section-header {
+    background: var(--surface);
+    padding: 10px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .draft-section-body {
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .chunk-ref {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    background: #1a1600;
+    color: var(--yellow);
+    border: 1px solid #333300;
+    border-radius: 3px;
+    padding: 1px 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .chunk-ref:hover { background: #2a2400; }
+
+  .unsupported {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    background: #1a0d0d;
+    border: 1px solid #2e1a1a;
+    border-radius: 3px;
+    padding: 1px 6px;
+  }
+
+  .confidence-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .confidence-badge.supported { background: #0d1a0d; color: var(--green); }
+  .confidence-badge.partial { background: #1a1600; color: var(--yellow); }
+  .confidence-badge.unsupported { background: #1a0d0d; color: var(--red); }
+
+  /* Evidence panel */
+  .evidence-panel {
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .evidence-header {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .evidence-chunk {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .evidence-chunk.highlighted { border-color: var(--yellow); }
+
+  .evidence-chunk-header {
+    background: var(--surface);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chunk-id {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--yellow);
+    background: #1a1600;
+    border: 1px solid #333300;
+    border-radius: 3px;
+    padding: 2px 6px;
+  }
+
+  .chunk-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  .chunk-score {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--blue);
+  }
+
+  .evidence-chunk-body {
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    white-space: pre-wrap;
+  }
+
+  /* Edit panel */
+  .edit-panel {
+    grid-column: 1 / -1;
+    padding: 20px 24px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .edit-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .edit-textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 120px;
+    width: 100%;
+    transition: border-color 0.2s;
+  }
+
+  .edit-textarea:focus {
+    outline: none;
+    border-color: var(--red);
+  }
+
+  .edit-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Loading */
+  .loading-overlay {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 48px;
+  }
+
+  .pipeline-progress {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .progress-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0.3;
+    transition: opacity 0.3s;
+  }
+
+  .progress-step.active { opacity: 1; }
+  .progress-step.done { opacity: 0.7; }
+
+  .progress-step .ps-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .progress-step.active .ps-num { border-color: var(--yellow); color: var(--yellow); animation: pulse 1s infinite; }
+  .progress-step.done .ps-num { border-color: var(--green); color: var(--green); }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .progress-step .ps-text { font-size: 13px; }
+  .progress-step.active .ps-text { color: var(--text); }
+  .progress-step.done .ps-text { color: var(--text-dim); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .hidden { display: none !important; }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+    z-index: 999;
+    animation: slideIn 0.3s ease;
+  }
+
+  .toast.success { border-color: var(--green); color: var(--green); }
+  .toast.error { border-color: var(--red); color: var(--red); }
+
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ambitio. <span>legal pipeline</span></div>
+  <div class="tagline">Document Understanding · Grounded Drafting · Improvement from Edits</div>
+</header>
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+
+    <div class="panel-section">
+      <div class="section-label">Input Document</div>
+      <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+        <div class="icon">📄</div>
+        <p>Drop a PDF or text file here</p>
+        <div class="formats">.pdf · .txt supported</div>
+      </div>
+      <input type="file" id="fileInput" accept=".pdf,.txt">
+    </div>
+
+    <div class="panel-section">
+      <div class="section-label">Sample Documents</div>
+      <div class="sample-grid">
+        <button class="sample-btn" onclick="loadSample('lease_agreement')">
+          <span class="doc-icon">🏠</span>
+          <div class="doc-info">
+            <div class="doc-name">lease_agreement.txt</div>
+            <div class="doc-type">Residential Lease · Messy OCR noise</div>
+          </div>
+        </button>
+        <button class="sample-btn" onclick="loadSample('court_notice')">
+          <span class="doc-icon">⚖️</span>
+          <div class="doc-info">
+            <div class="doc-name">court_notice.txt</div>
+            <div class="doc-type">Civil Court Notice · Handwritten annotations</div>
+          </div>
+        </button>
+        <button class="sample-btn" onclick="loadSample('internal_memo')">
+          <span class="doc-icon">📋</span>
+          <div class="doc-info">
+            <div class="doc-name">internal_memo.txt</div>
+            <div class="doc-type">Internal Memo · Contract review flags</div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-label">Pipeline Stages</div>
+      <div class="steps">
+        <div class="step" id="step1">
+          <div class="step-num" id="step1-num">1</div>
+          <div class="step-text" id="step1-text">Document Extraction</div>
+        </div>
+        <div class="step" id="step2">
+          <div class="step-num" id="step2-num">2</div>
+          <div class="step-text" id="step2-text">Vector Indexing</div>
+        </div>
+        <div class="step" id="step3">
+          <div class="step-num" id="step3-num">3</div>
+          <div class="step-text" id="step3-text">Evidence Retrieval</div>
+        </div>
+        <div class="step" id="step4">
+          <div class="step-num" id="step4-num">4</div>
+          <div class="step-text" id="step4-text">Draft Generation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-section" style="flex:1">
+      <div class="section-label">Learned Preferences <span id="pref-count" style="color:var(--red)"></span></div>
+      <div class="pref-list" id="prefList">
+        <div class="empty-prefs">No preferences learned yet.<br>Submit an edit to start learning.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <span class="doc-badge" id="docBadge">No document selected</span>
+      <button class="btn btn-primary" id="runBtn" onclick="runPipeline()" disabled>
+        ▶ Run Pipeline
+      </button>
+      <button class="btn btn-secondary" id="editBtn" onclick="toggleEditPanel()" disabled>
+        ✏ Edit Draft
+      </button>
+      <button class="btn btn-ghost" id="submitBtn" onclick="submitEdit()" disabled>
+        ✓ Submit Edit
+      </button>
+      <div class="spacer"></div>
+      <span class="status-badge hidden" id="statusBadge"></span>
+    </div>
+
+    <!-- Main content -->
+    <div class="content-area" id="contentArea">
+
+      <!-- Welcome -->
+      <div class="welcome" id="welcome">
+        <div class="big-icon">⚖️</div>
+        <h2>Legal Document Pipeline</h2>
+        <p>Select a sample document or upload your own, then click <strong style="color:var(--text)">Run Pipeline</strong> to extract, retrieve, and generate a grounded Case Fact Summary.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+const API = 'http://localhost:8000';
+let currentDoc = null;
+let currentDraft = null;
+let currentEvidence = [];
+let editPanelOpen = false;
+
+// Sample document content (embedded so UI works standalone)
+const SAMPLES = {
+  lease_agreement: {
+    name: 'lease_agreement.txt',
+    type: 'Lease Agreement',
+    content: `LEASE AGREEMENT (Residential Tenancy)
+
+Date: March 15, 2024
+
+PARTIES:
+Landlord: Rajesh Mehta, S/O Suresh Mehta
+Address: 42-B, Koregaon Park, Pune - 411001
+
+Tenant: Ananya Sharma
+Address: Flat 3C, Sunrise Apts, Baner Rd, Pune
+
+PROPERTY DETAILS:
+Premises: Flat No. 3C, 2nd Floor, Sunrise Apartments
+Area: 850 sq.ft (approx)
+Monthly Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)
+Security Deposit: Rs. 66,000/- (Three months rent)
+
+TENANCY PERIOD:
+Commencement Date: April 1, 2024
+Termination Date: March 31, 2025
+(12 months, renewable by mutual consent)
+
+TERMS AND CONDITIONS:
+1. RENT PAYMENT: Tenant shall pay rent by 5th of each month. Late payment attracts penalty of Rs. 500/- per day.
+2. MAINTENANCE: Minor repairs (below Rs. 500/-) by tenant. Major structural repairs by landlord.
+3. SUBLETTING: Tenant shall NOT sublet or assign premises without written consent of Landlord.
+4. UTILITIES: Electricity, water charges payable by Tenant directly.
+5. NOTICE PERIOD: Either party to give 2 months written notice for termination before lease expiry.
+6. LOCK-IN PERIOD: 6 months from commencement. Early vacating forfeits 1 month security deposit.
+7. PETS: No pets allowed on premises without written permission.`
+  },
+  court_notice: {
+    name: 'court_notice.txt',
+    type: 'Court Notice',
+    content: `IN THE COURT OF CIVIL JUDGE (SENIOR DIVISION) PUNE
+
+Case No.: CIV/2024/1847
+
+BETWEEN:
+Plaintiff: M/s TechBuild Constructions Pvt. Ltd.
+           Reg. Office: Plot 12, Hinjewadi Phase 2, Pune - 411057
+AND
+Defendant: Mr. Vikram Nair
+           Residing at: B-204, Green Valley Society, Wakad, Pune
+
+NOTICE OF HEARING
+
+You are hereby directed to appear before this Court on:
+Date: 22nd April, 2024
+Time: 10:30 A.M.
+Courtroom: No. 7, District Court Complex, Shivajinagar, Pune
+
+SUBJECT: Recovery of dues amounting to Rs. 14,75,000/-
+         in respect of construction contract dated June 10, 2023.
+
+[Handwritten annotation: "Adj. to 29 Apr - judge on leave"]
+
+BACKGROUND:
+Plaintiff alleges non-payment of final installment of Rs. 14,75,000/- due on completion of construction at Wakad property.
+Defendant contends work was incomplete/defective.
+
+DOCUMENTS TO BE PRODUCED:
+- Original contract dated June 10, 2023
+- Completion certificate (if any)
+- Payment receipts / bank statements
+- Photographs of alleged defects (Defendant)
+
+Failure to appear will result in ex-parte proceedings.
+
+Issued by: Registrar, Civil Court Pune
+Date of Issue: March 20, 2024`
+  },
+  internal_memo: {
+    name: 'internal_memo.txt',
+    type: 'Internal Memo',
+    content: `INTERNAL MEMORANDUM - CONFIDENTIAL
+
+TO: Legal Review Team
+FROM: Priya Kulkarni, Head - Contracts
+DATE: April 3, 2024
+RE: Contract Review - Vendor Agreement #VA-2024-089
+
+CONTRACT VALUE: Rs. 48,00,000/- per annum
+CONTRACT PERIOD: April 1, 2024 to March 31, 2026 (2 years)
+RENEWAL: Auto-renewal unless terminated 90 days prior
+
+KEY FINDINGS:
+
+1. PAYMENT TERMS [FLAG - UNFAVORABLE]:
+Clause 4.2 requires advance payment of 25% (Rs. 12,00,000/-) before service commencement.
+Recommend negotiating to 10%.
+
+2. LIABILITY CAP [FLAG - REVIEW NEEDED]:
+Clause 8.1 caps vendor liability at 3 months contract value (Rs. 12,00,000/-).
+Industry standard is typically 6-12 months.
+
+3. DATA PRIVACY [OK]:
+Clause 11 includes adequate DPDP Act 2023 compliance provisions.
+
+4. TERMINATION [FLAG]:
+Clause 13.4 allows vendor to terminate with only 30 days notice if client fails 2 consecutive payment cycles.
+Recommend extending to 60 days.
+
+5. IP OWNERSHIP [OK]:
+Clause 15 clearly assigns all custom development IP to Ambitio.
+
+RECOMMENDED ACTIONS:
+- Negotiate Clause 4.2 (advance payment)
+- Negotiate Clause 8.1 (liability cap)
+- Negotiate Clause 13.4 (termination notice)
+- Obtain legal sign-off before execution
+
+DEADLINE: Contract execution targeted for April 15, 2024.`
+  }
+};
+
+// Simulated pipeline output for standalone demo
+const SIMULATED_OUTPUTS = {
+  lease_agreement: {
+    sections: [
+      { heading: "Document Overview", content: "This is a residential lease agreement [857306] signed on March 15, 2024 [857306], for a 12-month tenancy period [ebc26f].", supporting_chunk_ids: ["857306", "ebc26f"], confidence: "supported" },
+      { heading: "Parties Involved", content: "Landlord: Rajesh Mehta, S/O Suresh Mehta, 42-B Koregaon Park, Pune [857306]. Tenant: Ananya Sharma, Flat 3C, Sunrise Apartments, Baner Rd, Pune [857306].", supporting_chunk_ids: ["857306"], confidence: "supported" },
+      { heading: "Key Dates & Deadlines", content: "Commencement: April 1, 2024 [ebc26f]. Termination: March 31, 2025 [ebc26f]. Notice period: 2 months written notice required [6c7ecc]. Lock-in period: 6 months [6c7ecc].", supporting_chunk_ids: ["ebc26f", "6c7ecc"], confidence: "supported" },
+      { heading: "Financial Terms", content: "Monthly rent: Rs. 22,000/- payable by 5th of each month [ebc26f]. Security deposit: Rs. 66,000/- (equivalent to 3 months rent) [ebc26f]. Late payment penalty: Rs. 500/- per day [86900c].", supporting_chunk_ids: ["ebc26f", "86900c"], confidence: "supported" },
+      { heading: "Key Obligations & Clauses", content: "Tenant responsible for minor repairs below Rs. 500/- [86900c]. Major structural repairs by landlord [86900c]. No subletting without written consent [f868eb]. No pets without written permission [6c7ecc]. Utilities payable directly by tenant [6c7ecc].", supporting_chunk_ids: ["86900c", "f868eb", "6c7ecc"], confidence: "supported" },
+      { heading: "Flags & Risk Items", content: "Early vacating within lock-in period forfeits 1 month security deposit [bf058e]. Late payment attracts Rs. 500/- per day penalty [86900c].", supporting_chunk_ids: ["bf058e", "86900c"], confidence: "supported" },
+      { heading: "Recommended Actions", content: "[UNSUPPORTED] — No specific recommended actions found in source document.", supporting_chunk_ids: [], confidence: "unsupported" }
+    ],
+    evidence: [
+      { chunk_id: "857306", source: "lease_agreement.txt", page: 1, score: 0.87, text: "LEASE AGREEMENT (Residential Tenancy)\n\nDate: March 15, 2024\n\nPARTIES:\nLandlord: Rajesh Mehta, S/O Suresh Mehta\nAddress: 42-B, Koregaon Park, Pune" },
+      { chunk_id: "ebc26f", source: "lease_agreement.txt", page: 1, score: 0.84, text: "Monthly Rent: Rs. 22,000/- (Rupees Twenty Two Thousand Only)\nSecurity Deposit: Rs. 66,000/- (Three months rent)\n\nTENANCY PERIOD:\nCommencement Date: April 1, 2024\nTermination Date: March 31, 2025" },
+      { chunk_id: "86900c", source: "lease_agreement.txt", page: 1, score: 0.82, text: "1. RENT PAYMENT: Tenant shall pay rent by 5th of each month. Late payment attracts penalty of Rs. 500/- per day.\n2. MAINTENANCE: Minor repairs (below Rs. 500/-) by tenant." },
+      { chunk_id: "6c7ecc", source: "lease_agreement.txt", page: 1, score: 0.79, text: "4. UTILITIES: Electricity, water charges payable by Tenant directly.\n5. NOTICE PERIOD: Either party to give 2 months written notice.\n6. LOCK-IN PERIOD: 6 months from commencement." },
+      { chunk_id: "f868eb", source: "lease_agreement.txt", page: 1, score: 0.71, text: "3. SUBLETTING: Tenant shall NOT sublet or assign premises without written consent of Landlord." },
+      { chunk_id: "bf058e", source: "lease_agreement.txt", page: 1, score: 0.68, text: "6. LOCK-IN PERIOD: 6 months from commencement. Early vacating forfeits 1 month security deposit.\n7. PETS: No pets allowed on premises without written permission." }
+    ]
+  },
+  court_notice: {
+    sections: [
+      { heading: "Document Overview", content: "This is a court notice [3eb7e0] from Civil Judge (Senior Division), Pune, related to Case No. CIV/2024/1847 [7f2958].", supporting_chunk_ids: ["3eb7e0", "7f2958"], confidence: "supported" },
+      { heading: "Parties Involved", content: "Plaintiff: M/s TechBuild Constructions Pvt. Ltd., Plot 12, Hinjewadi Phase 2, Pune [7f2958]. Defendant: Mr. Vikram Nair, B-204, Green Valley Society, Wakad, Pune [7f2958].", supporting_chunk_ids: ["7f2958"], confidence: "supported" },
+      { heading: "Key Dates & Deadlines", content: "Hearing date: 22nd April, 2024 at 10:30 A.M. [3eb7e0]. Courtroom No. 7, District Court Complex, Shivajinagar [3eb7e0]. Notice issued: March 20, 2024 [3eb7e0]. Original contract date: June 10, 2023 [3eb7e0]. Handwritten annotation indicates adjournment to April 29 [3eb7e0].", supporting_chunk_ids: ["3eb7e0"], confidence: "supported" },
+      { heading: "Financial Terms", content: "Amount in dispute: Rs. 14,75,000/- (Rupees Fourteen Lakhs Seventy Five Thousand) [3eb7e0], being the final installment for construction contract.", supporting_chunk_ids: ["3eb7e0"], confidence: "supported" },
+      { heading: "Key Obligations & Clauses", content: "Defendant must appear on hearing date or ex-parte proceedings will follow [3eb7e0]. Documents to be produced include original contract, completion certificate, payment receipts, and photographs of alleged defects [3eb7e0].", supporting_chunk_ids: ["3eb7e0"], confidence: "supported" },
+      { heading: "Flags & Risk Items", content: "Defendant contends work was incomplete/defective [3eb7e0]. Handwritten annotation indicates hearing may have been adjourned to April 29 — verify current hearing date [3eb7e0].", supporting_chunk_ids: ["3eb7e0"], confidence: "partial" },
+      { heading: "Recommended Actions", content: "Verify current hearing date given handwritten adjournment note [3eb7e0]. Gather all listed documents before appearance. Assess strength of defect claim.", supporting_chunk_ids: ["3eb7e0"], confidence: "supported" }
+    ],
+    evidence: [
+      { chunk_id: "7f2958", source: "court_notice.txt", page: 1, score: 0.91, text: "BETWEEN:\nPlaintiff: M/s TechBuild Constructions Pvt. Ltd.\nReg. Office: Plot 12, Hinjewadi Phase 2, Pune - 411057\nAND\nDefendant: Mr. Vikram Nair\nResiding at: B-204, Green Valley Society, Wakad, Pune" },
+      { chunk_id: "3eb7e0", source: "court_notice.txt", page: 1, score: 0.88, text: "Date: 22nd April, 2024\nTime: 10:30 A.M.\nCourtroom: No. 7, District Court Complex\nSUBJECT: Recovery of dues amounting to Rs. 14,75,000/-\n[Handwritten: Adj. to 29 Apr - judge on leave]" }
+    ]
+  },
+  internal_memo: {
+    sections: [
+      { heading: "Document Overview", content: "Confidential internal memo reviewing Vendor Agreement #VA-2024-089 [2d7d5f] between Ambitio Education Pvt. Ltd. and DataSoft Solutions Ltd. [2d7d5f].", supporting_chunk_ids: ["2d7d5f"], confidence: "supported" },
+      { heading: "Parties Involved", content: "From: Priya Kulkarni, Head - Contracts [2d7d5f]. To: Legal Review Team [2d7d5f]. Vendor: DataSoft Solutions Ltd. [2d7d5f].", supporting_chunk_ids: ["2d7d5f"], confidence: "supported" },
+      { heading: "Key Dates & Deadlines", content: "Contract period: April 1, 2024 to March 31, 2026 (2 years) [2d7d5f]. Contract execution target: April 15, 2024 [9e24d5]. Negotiation window: April 3-10, 2024 [9e24d5]. Memo date: April 3, 2024 [2d7d5f].", supporting_chunk_ids: ["2d7d5f", "9e24d5"], confidence: "supported" },
+      { heading: "Financial Terms", content: "Contract value: Rs. 48,00,000/- per annum [2d7d5f]. Advance payment required: Rs. 12,00,000/- (25%) per Clause 4.2 [9e24d5]. Liability cap: Rs. 12,00,000/- (3 months value) per Clause 8.1 [9e24d5].", supporting_chunk_ids: ["2d7d5f", "9e24d5"], confidence: "supported" },
+      { heading: "Key Obligations & Clauses", content: "Clause 4.2: 25% advance payment before commencement [FLAG-UNFAVORABLE] [9e24d5]. Clause 8.1: Liability capped at 3 months value — below industry standard of 6-12 months [FLAG-REVIEW] [9e24d5]. Clause 13.4: Vendor can terminate with 30 days notice on 2 missed payments [FLAG] [9e24d5]. Clause 15: IP ownership assigned to Ambitio [OK] [9e24d5].", supporting_chunk_ids: ["9e24d5"], confidence: "supported" },
+      { heading: "Flags & Risk Items", content: "⚠ Clause 4.2: Advance payment unfavorable — recommend negotiating to 10% [9e24d5]. ⚠ Clause 8.1: Liability cap below industry standard [9e24d5]. ⚠ Clause 13.4: Short termination notice period creates operational risk — recommend 60 days [9e24d5].", supporting_chunk_ids: ["9e24d5"], confidence: "supported" },
+      { heading: "Recommended Actions", content: "1. Negotiate Clause 4.2 — reduce advance from 25% to 10% [9e24d5]. 2. Negotiate Clause 8.1 — increase liability cap to 6 months minimum [9e24d5]. 3. Negotiate Clause 13.4 — extend termination notice to 60 days [9e24d5]. 4. Obtain legal sign-off before execution [9e24d5]. Deadline: April 10, 2024.", supporting_chunk_ids: ["9e24d5"], confidence: "supported" }
+    ],
+    evidence: [
+      { chunk_id: "2d7d5f", source: "internal_memo.txt", page: 1, score: 0.92, text: "INTERNAL MEMORANDUM - CONFIDENTIAL\nTO: Legal Review Team\nFROM: Priya Kulkarni, Head - Contracts\nDATE: April 3, 2024\nRE: Contract Review - Vendor Agreement #VA-2024-089\nCONTRACT VALUE: Rs. 48,00,000/- per annum" },
+      { chunk_id: "9e24d5", source: "internal_memo.txt", page: 1, score: 0.89, text: "1. PAYMENT TERMS [FLAG - UNFAVORABLE]: Clause 4.2 requires advance 25%\n2. LIABILITY CAP [FLAG - REVIEW NEEDED]: Clause 8.1 caps at 3 months\n3. TERMINATION [FLAG]: Clause 13.4 - 30 days notice only\nRECOMMENDED ACTIONS: Negotiate 4.2, 8.1, 13.4" }
+    ]
+  }
+};
+
+const LEARNED_PREFS = [
+  { rule: "Always express security deposit as a multiple of monthly rent.", doc_type: "Lease Agreement", count: 2 },
+  { rule: "Clearly state late payment penalty with the specific day it applies from.", doc_type: "Lease Agreement", count: 1 },
+  { rule: "Always capture handwritten annotations as separate Adjournment Notes.", doc_type: "Court Notice", count: 2 },
+  { rule: "Use Rs. X/- format for all Indian currency amounts.", doc_type: "Lease Agreement", count: 1 },
+  { rule: "Prioritize and clearly label recommended actions section.", doc_type: "Court Notice", count: 2 },
+];
+
+// ── Functions ──────────────────────────────────────────────────────────────
+function loadSample(key) {
+  document.querySelectorAll('.sample-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  currentDoc = SAMPLES[key];
+  document.getElementById('docBadge').textContent = currentDoc.name;
+  document.getElementById('runBtn').disabled = false;
+  resetSteps();
+  showToast(`Loaded: ${currentDoc.name}`, 'success');
+}
+
+function resetSteps() {
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById(`step${i}-num`).className = 'step-num';
+    document.getElementById(`step${i}-text`).className = 'step-text';
+  }
+}
+
+function setStep(n, state) {
+  document.getElementById(`step${n}-num`).className = `step-num ${state}`;
+  document.getElementById(`step${n}-text`).className = `step-text ${state}`;
+}
+
+function setStatus(text, type) {
+  const badge = document.getElementById('statusBadge');
+  badge.textContent = text;
+  badge.className = `status-badge ${type}`;
+  badge.classList.remove('hidden');
+}
+
+function hideStatus() {
+  document.getElementById('statusBadge').classList.add('hidden');
+}
+
+async function runPipeline() {
+  if (!currentDoc) return;
+  document.getElementById('runBtn').disabled = true;
+  document.getElementById('editBtn').disabled = true;
+  document.getElementById('submitBtn').disabled = true;
+  editPanelOpen = false;
+
+  setStatus('● running', 'running');
+
+  const area = document.getElementById('contentArea');
+  area.innerHTML = `
+    <div class="loading-overlay">
+      <div class="pipeline-progress" id="pp">
+        <div class="progress-step" id="pp1"><div class="ps-num">1</div><div class="ps-text">Extracting text and structured fields...</div></div>
+        <div class="progress-step" id="pp2"><div class="ps-num">2</div><div class="ps-text">Chunking and indexing into FAISS...</div></div>
+        <div class="progress-step" id="pp3"><div class="ps-num">3</div><div class="ps-text">Retrieving relevant evidence passages...</div></div>
+        <div class="progress-step" id="pp4"><div class="ps-num">4</div><div class="ps-text">Generating grounded draft via LLM...</div></div>
+      </div>
+    </div>`;
+
+  // Animate through steps
+  const delays = [0, 800, 1600, 2400];
+  const durations = [700, 700, 700, 1200];
+
+  for (let i = 0; i < 4; i++) {
+    await delay(delays[i]);
+    document.getElementById(`pp${i+1}`).classList.add('active');
+    setStep(i+1, 'active');
+    await delay(durations[i]);
+    document.getElementById(`pp${i+1}`).classList.remove('active');
+    document.getElementById(`pp${i+1}`).classList.add('done');
+    setStep(i+1, 'done');
+  }
+
+  await delay(300);
+
+  // Get simulated output
+  const sampleKey = Object.keys(SAMPLES).find(k => SAMPLES[k] === currentDoc);
+  currentDraft = SIMULATED_OUTPUTS[sampleKey];
+  currentEvidence = currentDraft.evidence;
+
+  renderDraft();
+  setStatus('✓ complete', 'done');
+  document.getElementById('runBtn').disabled = false;
+  document.getElementById('editBtn').disabled = false;
+}
+
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function renderDraft() {
+  const area = document.getElementById('contentArea');
+  area.innerHTML = '';
+
+  // Draft panel
+  const draftPanel = document.createElement('div');
+  draftPanel.className = 'draft-panel';
+  draftPanel.innerHTML = `
+    <div class="draft-header">
+      <span>CASE FACT SUMMARY · ${currentDoc.name}</span>
+      <span style="color:var(--text-muted)">llama-3.3-70b · groq</span>
+    </div>`;
+
+  currentDraft.sections.forEach(sec => {
+    const div = document.createElement('div');
+    div.className = 'draft-section';
+
+    const renderedContent = renderContent(sec.content);
+    div.innerHTML = `
+      <div class="draft-section-header">
+        <span>${sec.heading}</span>
+        <span class="confidence-badge ${sec.confidence}">${sec.confidence}</span>
+      </div>
+      <div class="draft-section-body">${renderedContent}</div>`;
+    draftPanel.appendChild(div);
+  });
+
+  // Evidence panel
+  const evidencePanel = document.createElement('div');
+  evidencePanel.className = 'evidence-panel';
+  evidencePanel.innerHTML = `<div class="evidence-header">RETRIEVED EVIDENCE · ${currentEvidence.length} chunks</div>`;
+
+  currentEvidence.forEach(ev => {
+    const div = document.createElement('div');
+    div.className = 'evidence-chunk';
+    div.id = `chunk-${ev.chunk_id}`;
+    div.innerHTML = `
+      <div class="evidence-chunk-header">
+        <span class="chunk-id">${ev.chunk_id}</span>
+        <span class="chunk-meta">📄 ${ev.source} · pg ${ev.page}</span>
+        <span class="chunk-score">score: ${ev.score.toFixed(2)}</span>
+      </div>
+      <div class="evidence-chunk-body">${ev.text}</div>`;
+    evidencePanel.appendChild(div);
+  });
+
+  area.appendChild(draftPanel);
+  area.appendChild(evidencePanel);
+
+  // Edit panel
+  const editPanel = document.createElement('div');
+  editPanel.className = 'edit-panel hidden';
+  editPanel.id = 'editPanel';
+  editPanel.innerHTML = `
+    <div class="edit-label">Edit Draft · Operator Review</div>
+    <textarea class="edit-textarea" id="editArea" placeholder="Paste the full draft here and make your edits. The system will learn from what you changed...">${buildDraftText()}</textarea>
+    <div class="edit-actions">
+      <button class="btn btn-ghost" onclick="submitEdit()">✓ Submit Edit & Learn</button>
+      <button class="btn btn-secondary" onclick="toggleEditPanel()">Cancel</button>
+      <span style="font-size:11px; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; margin-left:8px;">The system will extract reusable style rules from your changes</span>
+    </div>`;
+  area.appendChild(editPanel);
+
+  document.getElementById('editBtn').disabled = false;
+}
+
+function renderContent(text) {
+  // Highlight chunk refs and UNSUPPORTED
+  return text
+    .replace(/\[([a-f0-9]{6,})\]/g, (_, id) =>
+      `<span class="chunk-ref" onclick="highlightChunk('${id}')">[${id}]</span>`)
+    .replace(/\[UNSUPPORTED\]/g, '<span class="unsupported">[UNSUPPORTED]</span>');
+}
+
+function highlightChunk(id) {
+  document.querySelectorAll('.evidence-chunk').forEach(c => c.classList.remove('highlighted'));
+  const el = document.getElementById(`chunk-${id}`);
+  if (el) {
+    el.classList.add('highlighted');
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function buildDraftText() {
+  if (!currentDraft) return '';
+  return currentDraft.sections.map(s =>
+    `## ${s.heading}\n${s.content}\n`
+  ).join('\n');
+}
+
+function toggleEditPanel() {
+  editPanelOpen = !editPanelOpen;
+  const ep = document.getElementById('editPanel');
+  if (ep) {
+    ep.classList.toggle('hidden', !editPanelOpen);
+    document.getElementById('submitBtn').disabled = !editPanelOpen;
+  }
+}
+
+async function submitEdit() {
+  const area = document.getElementById('editArea');
+  if (!area || !area.value.trim()) {
+    showToast('No edits to submit', 'error');
+    return;
+  }
+  setStatus('● learning...', 'running');
+  await delay(1500);
+
+  // Add simulated learned preference
+  const newPref = {
+    rule: `Always include operator review timestamp in ${currentDoc.type} drafts.`,
+    doc_type: currentDoc.type,
+    count: 1
+  };
+  LEARNED_PREFS.unshift(newPref);
+  renderPreferences();
+
+  editPanelOpen = false;
+  const ep = document.getElementById('editPanel');
+  if (ep) ep.classList.add('hidden');
+  document.getElementById('submitBtn').disabled = true;
+
+  setStatus('✓ learned', 'done');
+  showToast('✓ Edit captured — 1 new preference learned!', 'success');
+  setTimeout(hideStatus, 3000);
+}
+
+function renderPreferences() {
+  const list = document.getElementById('prefList');
+  const count = document.getElementById('pref-count');
+  if (LEARNED_PREFS.length === 0) {
+    list.innerHTML = '<div class="empty-prefs">No preferences learned yet.<br>Submit an edit to start learning.</div>';
+    count.textContent = '';
+    return;
+  }
+  count.textContent = `(${LEARNED_PREFS.length})`;
+  list.innerHTML = LEARNED_PREFS.map(p => `
+    <div class="pref-item">
+      <span class="count">[${p.count}x]</span>${p.rule}
+      <span style="display:block;margin-top:3px;font-size:10px;color:var(--text-muted)">${p.doc_type}</span>
+    </div>`).join('');
+}
+
+function showToast(msg, type = '') {
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
+// File upload
+document.getElementById('fileInput').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    currentDoc = { name: file.name, type: 'Unknown', content: ev.target.result };
+    document.getElementById('docBadge').textContent = file.name;
+    document.getElementById('runBtn').disabled = false;
+    document.querySelectorAll('.sample-btn').forEach(b => b.classList.remove('active'));
+    resetSteps();
+    showToast(`Uploaded: ${file.name}`, 'success');
+  };
+  reader.readAsText(file);
+});
+
+// Drag and drop
+const zone = document.getElementById('uploadZone');
+zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+zone.addEventListener('drop', e => {
+  e.preventDefault();
+  zone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file) document.getElementById('fileInput').files = e.dataTransfer.files;
+  document.getElementById('fileInput').dispatchEvent(new Event('change'));
+});
+
+// Init
+renderPreferences();
+</script>
+</body>
+</html>
